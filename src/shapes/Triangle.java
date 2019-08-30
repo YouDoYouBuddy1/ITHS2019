@@ -13,10 +13,10 @@ public class Triangle {
                 this.sideLength2 = sideLength2;
                 this.sideLength3 = sideLength3;
             } else {
-                System.out.println("!!! Impossible shape, using defaults");
+                System.out.println("!!! Impossible shape, using default values\n");
             }
         } else {
-            System.out.println("!!! Invalid side length, using defaults");
+            System.out.println("!!! Invalid side length, using defaults\n");
         }
 
     }

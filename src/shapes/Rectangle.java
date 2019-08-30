@@ -10,7 +10,7 @@ public class Rectangle {
             this.base = base;
             this.height = height;
         } else {
-            System.out.println("!!! Invalid proportions, using defaults");
+            System.out.println("!!! Invalid proportions, using defaults\n");
         }
     }
     

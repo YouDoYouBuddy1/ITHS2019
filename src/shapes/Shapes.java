@@ -1,9 +1,6 @@
 package shapes;
 
 import java.util.Scanner;
-import shapes.Circle;
-import shapes.Triangle;
-import shapes.Rectangle;
 
 public class Shapes {
 
@@ -12,7 +9,10 @@ public class Shapes {
 
         boolean exit = false;
         while (!exit) {
-            System.out.println("Choose a shape:\n1.Circle\n2.Rectangle\n3.Triangle\n0.Exit");
+            System.out.println("\n===============");
+            System.out.println("     Menu\n===============\n1.Circle\n2.Rectangle\n3.Triangle\n0.Exit");
+            System.out.println("===============");
+            System.out.print("Make a choice: ");
             String inputShape = sc.nextLine();
 
             switch (inputShape) {
@@ -21,9 +21,9 @@ public class Shapes {
                         System.out.print("Input radius: ");
                         double radius = Double.parseDouble(sc.nextLine());
                         System.out.println("\n");
-                        
+
                         Circle c = new Circle(radius);
-                        System.out.println("Area: " + c.area() + ", Circumference: " + c.circumference() + "\n");
+                        pickOutput(c.area(), c.circumference());
                     } catch (NumberFormatException e) {
                         System.out.println("Numbers only!");
                     }
@@ -36,13 +36,13 @@ public class Shapes {
                         System.out.print("Input Height: ");
                         double height = Double.parseDouble(sc.nextLine());
                         System.out.println("\n");
-                        
-                        Rectangle r = new Rectangle(base,height);
-                        System.out.println("Area: " + r.area() + ", Circumference: " + r.circumference() + "\n");
+
+                        Rectangle r = new Rectangle(base, height);
+                        pickOutput(r.area(), r.circumference());
                     } catch (NumberFormatException e) {
                         System.out.println("Numbers only!");
                     }
-                    
+
                     break;
                 case "3":
                     try {
@@ -53,13 +53,13 @@ public class Shapes {
                         System.out.print("Input the length of side 3: ");
                         double sideLength3 = Double.parseDouble(sc.nextLine());
                         System.out.println("\n");
-                        
-                        Triangle t = new Triangle(sideLength1,sideLength2,sideLength3);
-                        System.out.println("Area: " + t.area() + ", Circumference: " + t.circumference() + "\n");
+
+                        Triangle t = new Triangle(sideLength1, sideLength2, sideLength3);
+                        pickOutput(t.area(), t.circumference());
                     } catch (NumberFormatException e) {
                         System.out.println("Numbers only!");
                     }
-                    
+
                     break;
                 case "0":
                     exit = true;
@@ -69,6 +69,28 @@ public class Shapes {
                     break;
             }
 
+        }
+    }
+
+    private static void pickOutput(double area, double circumference) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1.Show area\n2.Show circumference\n3.Show both");
+        System.out.print("Make a choice: ");
+        int input = sc.nextInt();
+
+        switch (input) {
+            case 1:
+                System.out.println("Area: " + area);
+                break;
+            case 2:
+                System.out.println("Circumference: " + circumference);
+                break;
+            case 3:
+                System.out.println("Area: " + area + ", Circumference: " + circumference);
+                break;
+            default:
+                break;
         }
     }
 
