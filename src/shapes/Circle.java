@@ -2,19 +2,22 @@ package shapes;
 
 public class Circle {
 
-    private final double PI = 3.14;
-    private double radius;
+    private double radius = 1.0;
 
     public Circle(double radius) {
-        this.radius = radius;
+        if (radius > 0) {
+            this.radius = radius;
+        } else {
+            System.out.println("!!! Invalid radius, using default");
+        }
     }
 
     public double area() {
-        return getRadius() * getRadius() * PI;
+        return getRadius() * getRadius() * Math.PI;
     }
 
     public double circumference() {
-        return 2 * PI * radius;
+        return 2 * Math.PI * radius;
     }
 
     public double getRadius() {

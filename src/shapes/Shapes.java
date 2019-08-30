@@ -20,9 +20,10 @@ public class Shapes {
                     try {
                         System.out.print("Input radius: ");
                         double radius = Double.parseDouble(sc.nextLine());
+                        System.out.println("\n");
                         
                         Circle c = new Circle(radius);
-                        System.out.println("Area: " + c.area() + ", Circumference: " + c.circumference());
+                        System.out.println("Area: " + c.area() + ", Circumference: " + c.circumference() + "\n");
                     } catch (NumberFormatException e) {
                         System.out.println("Numbers only!");
                     }
@@ -34,9 +35,10 @@ public class Shapes {
                         double base = Double.parseDouble(sc.nextLine());
                         System.out.print("Input Height: ");
                         double height = Double.parseDouble(sc.nextLine());
+                        System.out.println("\n");
                         
                         Rectangle r = new Rectangle(base,height);
-                        System.out.println("Area: " + r.area() + ", Circumference: " + r.circumference());
+                        System.out.println("Area: " + r.area() + ", Circumference: " + r.circumference() + "\n");
                     } catch (NumberFormatException e) {
                         System.out.println("Numbers only!");
                     }
@@ -50,9 +52,10 @@ public class Shapes {
                         double sideLength2 = Double.parseDouble(sc.nextLine());
                         System.out.print("Input the length of side 3: ");
                         double sideLength3 = Double.parseDouble(sc.nextLine());
+                        System.out.println("\n");
                         
                         Triangle t = new Triangle(sideLength1,sideLength2,sideLength3);
-                        System.out.println("Area: " + t.area() + ", Circumference: " + t.circumference());
+                        System.out.println("Area: " + t.area() + ", Circumference: " + t.circumference() + "\n");
                     } catch (NumberFormatException e) {
                         System.out.println("Numbers only!");
                     }

@@ -8,16 +8,15 @@ public class Triangle {
 
     public Triangle(double sideLength1, double sideLength2, double sideLength3) {
         if (sideLength1 > 0 && sideLength2 > 0 && sideLength3 > 0) {
-            if (sideLength1 < sideLength2 + sideLength3 && sideLength2 < sideLength1 + sideLength3 && sideLength3 < sideLength2 + sideLength1) {
+            if (sideLength1 <= sideLength2 + sideLength3 && sideLength2 <= sideLength1 + sideLength3 && sideLength3 <= sideLength2 + sideLength1) {
                 this.sideLength1 = sideLength1;
                 this.sideLength2 = sideLength2;
                 this.sideLength3 = sideLength3;
-                System.out.println("Created traingle succesfully");
             } else {
-                System.out.println("Imposible shape, using defaults");
+                System.out.println("!!! Impossible shape, using defaults");
             }
         } else {
-            System.out.println("Invalid side length, using defaults.");
+            System.out.println("!!! Invalid side length, using defaults");
         }
 
     }
